@@ -14,7 +14,7 @@ The goal of the project is to replicate some of the basic functionality of the s
 
 ## Resources
 
-- [Secrets of printfby Don colton](https://www.cypress.com/file/54761/download/)
+- [Secrets of printf by Don colton](https://mega.nz/file/SjQBSQiI#Osz7xn-a5scNnLLO5Po0b1CFB6DqlxUfvc8KNl0ZViI)
 
 ## Authorized functions and macros
 
@@ -64,7 +64,7 @@ Our `printf` function supports the following format specifiers:
 - `%s`: Print a string.
 - `%d`: Print a decimal integer.
 - `%x`: Print an integer in hexadecimal format.
-- ... (you can add more format specifiers here)
+- ...
 
 Refer to the code implementation for additional details on the supported format specifiers and their usage.
 
