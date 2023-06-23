@@ -42,6 +42,10 @@ git clone https://github.com/ugwujustine/printf.git
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 ```
 
+3. man page:
+```bash
+man ./man_printf
+
 ## Usage
 
 To use our custom `printf` function, include the `main.h` header file in your C program:
@@ -91,7 +95,7 @@ my_printf("The character is %c.\n", 'A');
 
 |Name                |Information                        |Relevant Files                         |
 |----------------|-------------------------------|-----------------------------|
-|`man_3_my_printf`|Man page of the _myprintf() function.| `None` |
+|`man_printf`|Man page of the _myprintf() function.| `None` |
 |`main.h`	| Header file with the data type struct, standard libraries and custom prototypes.| `*.c compilation` |
 `_putchar.c` | Custom putchar function. | `None` |
 
