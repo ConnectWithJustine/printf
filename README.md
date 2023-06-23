@@ -42,6 +42,10 @@ git clone https://github.com/ugwujustine/printf.git
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 ```
 
+3. man page:
+```bash
+man ./man_myprintf
+
 ## Usage
 
 To use our custom `printf` function, include the `main.h` header file in your C program:
