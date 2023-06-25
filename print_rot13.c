@@ -15,11 +15,11 @@ int print_rot13(va_list ar)
 	{
 		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
 			_putchar(str[i] + 13);
-		else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
+		else if
+			((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
 			_putchar(str[i] - 13);
 		else
 			_putchar(str[i]);
 	}
-
 	return (length);
 }
