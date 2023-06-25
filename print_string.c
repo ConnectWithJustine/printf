@@ -32,3 +32,4 @@ int print_string(va_list ar)
 
 	return (count);
 }
+#endif
