@@ -8,15 +8,15 @@
  */
 int print_pointer(va_list ar)
 {
-    void *ptr = va_arg(ar, void *);
-    char buffer[20];
-    int length;
+	void *ptr = va_arg(ar, void *);
+	char buffer[20];
+	int length;
 
-    sprintf(buffer, "%p", ptr);
-    length = _strlen(buffer);
+	sprintf(buffer, "%p", ptr);
+	length = _strlen(buffer);
 
-    for (int i = 0; i < length; i++)
-        _putchar(buffer[i]);
+	for (int i = 0; i < length; i++)
+		_putchar(buffer[i]);
 
-    return (length);
+	return (length);
 }

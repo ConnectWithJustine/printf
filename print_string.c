@@ -8,27 +8,27 @@
  */
 int print_string(va_list ar)
 {
-    char *str = va_arg(ar, char *);
-    int count = 0;
+	char *str = va_arg(ar, char *);
+	int count = 0;
 
-    if (str == NULL)
-        str = "(null)";
+	if (str == NULL)
+		str = "(null)";
 
-    for (; *str != '\0'; str++)
-    {
-        if ((*str >= 0 && *str < 32) || *str >= 127)
-        {
-            _putchar('\\');
-            _putchar('x');
-            count += 2;
-            count += print_hex(*str);
-        }
-        else
-        {
-            _putchar(*str);
-            count++;
-        }
-    }
+	for (; *str != '\0'; str++)
+	{
+		if ((*str >= 0 && *str < 32) || *str >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			count += 2;
+			count += print_hex(*str);
+		}
+		else
+		{
+			_putchar(*str);
+			count++;
+		}
+	}
 
-    return (count);
+	return (count);
 }
