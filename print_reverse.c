@@ -17,6 +17,5 @@ int print_reverse(va_list ar)
 		_putchar(str[i]);
 		count++;
 	}
-
 	return (count);
 }
