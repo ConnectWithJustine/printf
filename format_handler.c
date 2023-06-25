@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 
 /**
  * format_handler - Handles the formatting of a single conversion specifier.
@@ -45,17 +45,16 @@ int format_handler(char specifier, va_list ar)
 		count += print_rot13(ar);
 		break;
 	case 'S':
-        	count += print_string(ar);
-        	break;
+		count += print_string(ar);
+		break;
 	case 'r':
-        	count += print_reverse(ar);
-        	break;
+		count += print_reverse(ar);
+		break;
 	default:
-        	_putchar('%');
-       		 _putchar(specifier);
-        	count += 2;
-        	break;
+		_putchar('%');
+		_putchar(specifier);
+		count += 2;
+		break;
 	}
-
 	return (count);
 }
