@@ -26,11 +26,12 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
-			else if (*format == 'c' || *format == 's' || *format == 'd' ||
-			         *format == 'i' || *format == 'b' || *format == 'u' ||
-			         *format == 'o' || *format == 'x' || *format == 'X' ||
-			         *format == 'p' || *format == 'R' || *format == 'r' ||
-			         *format == 'S')
+			else if
+				(*format == 'c' || *format == 's' || *format == 'd' ||
+				 *format == 'i' || *format == 'b' || *format == 'u' ||
+				 *format == 'o' || *format == 'x' || *format == 'X' ||
+				 *format == 'p' || *format == 'R' || *format == 'r' ||
+				 *format == 'S')
 			{
 				count += format_handler(*format, ar);
 			}

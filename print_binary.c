@@ -18,6 +18,7 @@ int print_binary(va_list ar)
 	}
 
 	unsigned int j = num;
+
 	while (j > 0)
 	{
 		j = j >> 1;
@@ -38,6 +39,5 @@ int print_binary(va_list ar)
 	{
 		_putchar('0' + binary[i]);
 	}
-
 	return (length);
 }
