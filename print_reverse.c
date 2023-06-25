@@ -1,44 +1,22 @@
 #include "main.h"
+
 /**
- * print_reverse - Prints reverse string.
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of chars printed
+ * print_reverse - Prints a reversed string.
+ * @ar: A va_list containing the string to be printed in reverse.
+ *
+ * Return: The number of characters printed.
  */
-
-int print_reverse(va_list types, char buffer[],
-	int flags, int width, int precision, int size)
+int print_reverse(va_list ar)
 {
-	char *str;
-	int i, count = 0;
+    char *str = va_arg(ar, char *);
+    int length = _strlen(str);
+    int count = 0;
 
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(size);
+    for (int i = length - 1; i >= 0; i--)
+    {
+        _putchar(str[i]);
+        count++;
+    }
 
-	str = va_arg(types, char *);
-
-	if (str == NULL)
-	{
-		UNUSED(precision);
-
-		str = ")Null(";
-	}
-	for (i = 0; str[i]; i++)
-		;
-
-	for (i = i - 1; i >= 0; i--)
-	{
-		char z = str[i];
-
-		write(1, &z, 1);
-		count++;
-	}
-	return (count);
+    return (count);
 }
-#endif
