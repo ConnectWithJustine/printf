@@ -1,46 +1,43 @@
 #include "main.h"
+
 /**
- * print_binary - Prints an unsigned number
- * @types: Lista of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Numbers of char printed.
+ * print_binary - Prints a decimal number in binary format.
+ * @ar: A va_list containing the decimal number to be printed.
+ *
+ * Return: The number of characters printed.
  */
-int print_binary(va_list types, char buffer[],
-	int flags, int width, int precision, int size)
+int print_binary(va_list ar)
 {
-	unsigned int n, m, i, sum;
-	unsigned int a[32];
-	int count;
+    unsigned int num = va_arg(ar, unsigned int);
+    int length = 0;
 
-	UNUSED(buffer);
-	UNUSED(flags);
-	UNUSED(width);
-	UNUSED(precision);
-	UNUSED(size);
+    if (num == 0)
+    {
+        _putchar('0');
+        return (1);
+    }
 
-	n = va_arg(types, unsigned int);
-	m = 2147483648; /* (2 ^ 31) */
-	a[0] = n / m;
-	for (i = 1; i < 32; i++)
-	{
-		m /= 2;
-		a[i] = (n / m) % 2;
-	}
-	for (i = 0, sum = 0, count = 0; i < 32; i++)
-	{
-		sum += a[i];
-		if (sum || i == 31)
-		{
-			char z = '0' + a[i];
+    unsigned int j = num;
+    while (j > 0)
+    {
+        j = j >> 1;
+        length++;
+    }
 
-			write(1, &z, 1);
-			count++;
-		}
-	}
-	return (count);
+    int binary[length];
+    int i = 0;
+
+    while (num > 0)
+    {
+        binary[i] = num & 1;
+        num = num >> 1;
+        i++;
+    }
+
+    for (i = length - 1; i >= 0; i--)
+    {
+        _putchar('0' + binary[i]);
+    }
+
+    return (length);
 }
-#endif
