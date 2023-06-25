@@ -15,6 +15,5 @@ int print_hex(char c)
 	_putchar(hex_digits[c & 0xF]);
 
 	count += 2;
-
 	return (count);
 }

@@ -23,7 +23,3 @@ int print_rot13(va_list ar)
 	}
 	return (length);
 }
-<<<<<<< HEAD
-#endif
-=======
->>>>>>> 9626e931143d473cb54ced041ffd88c386f69288
