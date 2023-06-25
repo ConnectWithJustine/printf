@@ -20,4 +20,3 @@ int print_unsigned(va_list ar)
 
 	return (length);
 }
-#endif
