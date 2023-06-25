@@ -1,35 +1,22 @@
 #include "main.h"
+
 /**
- * print_unsigned - Prints an unsigned number
- * @types: List a of arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
- * @size: Size specifier
- * Return: Number of chars printed.
+ * print_unsigned - Prints an unsigned decimal number.
+ * @ar: A va_list containing the unsigned decimal number to be printed.
+ *
+ * Return: The number of characters printed.
  */
-int print_unsigned(va_list types, char buffer[],
-	int flags, int width, int precision, int size)
+int print_unsigned(va_list ar)
 {
-	int i = BUFF_SIZE - 2;
-	unsigned long int num = va_arg(types, unsigned long int);
+    unsigned int num = va_arg(ar, unsigned int);
+    char buffer[20];
+    int length;
 
-	num = convert_size_unsgnd(num, size);
+    sprintf(buffer, "%u", num);
+    length = _strlen(buffer);
 
-	if (num == 0)
-		buffer[i--] = '0';
+    for (int i = 0; i < length; i++)
+        _putchar(buffer[i]);
 
-	buffer[BUFF_SIZE - 1] = '\0';
-
-	while (num > 0)
-	{
-		buffer[i--] = (num % 10) + '0';
-		num /= 10;
-	}
-
-	i++;
-
-	return (write_unsgnd(0, i, buffer, flags, width, precision, size));
+    return (length);
 }
-#endif
