@@ -1,42 +1,44 @@
 #include "main.h"
-
 /**
- * _printf - Custom printf function.
- * @format: A character string containing zero or more directives.
- *
- * Return: The number of characters printed.
+ * _printf - is a function that selects the correct function to print.
+ * @format: identifier to look for.
+ * Return: the length of the string.
  */
-int _printf(const char *format, ...)
+int _printf(const char *const format, ...)
 {
+	format_handler m[] = {
+		{"%s", print_string}, {"%c", print_char}, {"%%", print_percent},
+		{"%i", print_decimal}, {"%d", print_decimal}, {"%r", print_reverse},
+		{"%R", print_rot13}, {"%b", print_binary}, {"%u", print_unsigned},
+		{"%o", print_octal}, {"%x", print_hexadecimal_lower},
+		{"%X", print_hexadecimal_upper}, {"%S", print_string},
+		{"%p", print_pointer}};
+
 	va_list args;
-	int count = 0;
-	char current_char;
+	int i = 0, j, len = 0;
 
 	va_start(args, format);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 
-	while ((current_char = *format++) != '\0')
+Here:
+	while (format[i] != '\0')
 	{
-		if (current_char == '%')
+		j = 13;
+		while (j >= 0)
 		{
-			if (*format == '%')
+			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-				_putchar('%');
-				count++;
-				format++;
+				len += m[j].f(args);
+				i = i + 2;
+				goto Here;
 			}
-			else if (*format)
-			{
-				count += format_handler(*format++, args);
-			}
+			j--;
 		}
-		else
-		{
-			_putchar(current_char);
-			count++;
-		}
+		_putchar(format[i]);
+		len++;
+		i++;
 	}
-
 	va_end(args);
-
-	return (count);
+	return (len);
 }

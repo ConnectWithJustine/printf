@@ -6,10 +6,21 @@
 #include <limits.h>
 #include <stdio.h>
 
-
 /* Core _printf function */
 int _printf(const char *format, ...);
-int format_handler(char specifier, va_list ar);
+
+/**
+ * struct format - format handler function
+ * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
+ * @f: type pointer to function for the conversion specifier
+ *
+ */
+
+typedef struct format
+{
+	char *id;
+	int (*f)();
+} format_handler;
 
 /* Custom conversion specifiers */
 int print_percent(__attribute__((unused)) va_list ar);
@@ -32,3 +43,4 @@ int print_hex(char c);
 int _putchar(char c);
 
 #endif /* MAIN_H */
+
