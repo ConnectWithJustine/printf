@@ -23,6 +23,7 @@ int print_string(va_list ar);
 int print_octal(va_list ar);
 int print_char(va_list ar);
 int print_rot13(va_list ar);
+
 /* others */
 char *_strcpy(char *dest, char *src);
 int print_reverse(va_list ar);

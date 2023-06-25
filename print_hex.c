@@ -8,13 +8,13 @@
  */
 int print_hex(char c)
 {
-    char hex_digits[] = "0123456789ABCDEF";
-    int count = 0;
+	char hex_digits[] = "0123456789ABCDEF";
+	int count = 0;
 
-    _putchar(hex_digits[(c >> 4) & 0xF]);
-    _putchar(hex_digits[c & 0xF]);
+	_putchar(hex_digits[(c >> 4) & 0xF]);
+	_putchar(hex_digits[c & 0xF]);
 
-    count += 2;
+	count += 2;
 
-    return (count);
+	return (count);
 }
