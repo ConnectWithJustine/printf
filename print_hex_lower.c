@@ -11,13 +11,12 @@ int print_hexadecimal_lower(va_list ar)
 {
 	unsigned int num = va_arg(ar, unsigned int);
 	char buffer[20];
-	int length;
+	int i, length;
 
 	sprintf(buffer, "%x", num);
 	length = _strlen(buffer);
 
-	int i;
 	for (i = 0; i < length; i++)
 		_putchar(buffer[i]);
-	return length;
+	return (length);
 }

@@ -10,14 +10,13 @@ int print_octal(va_list ar)
 {
 	unsigned int num = va_arg(ar, unsigned int);
 	char buffer[20];
-	int length;
+	int length, i;
 
 	sprintf(buffer, "%o", num);
 	length = _strlen(buffer);
 
-	int i;
 	for (i = 0; i < length; i++)
 		_putchar(buffer[i]);
 
-	return length;
+	return (length);
 }
