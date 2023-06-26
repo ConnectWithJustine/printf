@@ -9,6 +9,7 @@
 
 /* Core _printf function */
 int _printf(const char *format, ...);
+int format_handler(char specifier, va_list args);
 
 /**
  * struct format - format handler function
@@ -16,13 +17,13 @@ int _printf(const char *format, ...);
  * @f: type pointer to function for the conversion specifier
  *
  */
-
+/*
 typedef struct format
 {
 	char *id;
 	int (*f)();
 } format_handler;
-
+*/
 /* Custom conversion specifiers */
 int print_percent(__attribute__((unused)) va_list ar);
 int print_hexadecimal_upper(va_list ar);

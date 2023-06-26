@@ -2,7 +2,7 @@
 
 /**
  * print_rot13 - Prints a string encoded in rot13.
- * @ar: A va_list containing the string to be printed in rot13.
+ * @args: A va_list containing the string to be printed in rot13.
  *
  * Return: The number of characters printed.
  */

@@ -2,7 +2,7 @@
 
 /**
  * print_unsigned - Prints an unsigned decimal number.
- * @ar: A va_list containing the unsigned decimal number to be printed.
+ * @args: A va_list containing the unsigned decimal number to be printed.
  *
  * Return: The number of characters printed.
  */
