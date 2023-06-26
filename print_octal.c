@@ -9,7 +9,7 @@
 int print_octal(va_list ar)
 {
 	unsigned int num = va_arg(ar, unsigned int);
-	char buffer[20];
+	char buffer[1024];
 	int length, i;
 
 	sprintf(buffer, "%o", num);
