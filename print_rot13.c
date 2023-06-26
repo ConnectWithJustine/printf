@@ -6,21 +6,33 @@
  *
  * Return: The number of characters printed.
  */
-int print_rot13(va_list ar)
+int print_rot13(va_list args)
 {
-	char *str = va_arg(ar, char *);
-	int length = _strlen(str);
+	int i, j, counter = 0;
+	int k = 0;
+	char *s = va_arg(args, char*);
+	char alpha[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+	char beta[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
-	for (int i = 0; i < length; i++)
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i]; i++)
 	{
-		if
-			((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
-			_putchar(str[i] + 13);
-		else if
-			((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
-			_putchar(str[i] - 13);
-		else
-			_putchar(str[i]);
+		k = 0;
+		for (j = 0; alpha[j] && !k; j++)
+		{
+			if (s[i] == alpha[j])
+			{
+				_putchar(beta[j]);
+				counter++;
+				k = 1;
+			}
+		}
+		if (!k)
+		{
+			_putchar(s[i]);
+			counter++;
+		}
 	}
-	return (length);
+	return (counter);
 }
