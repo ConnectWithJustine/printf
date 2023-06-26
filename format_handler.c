@@ -21,7 +21,7 @@ int format_handler(char specifier, va_list args)
 	case 'b':
 		return (print_binary(args));
 	case 'u':
-		return (print_unsigned(args));
+		return (print_unsigned_int(args));
 	case 'o':
 		return (print_octal(args));
 	case 'x':
