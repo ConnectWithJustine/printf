@@ -9,7 +9,11 @@
 int print_pointer(va_list ar)
 {
 	void *ptr = va_arg(ar, void *);
-	char buffer[20];
+
+	if (!ptr)
+	{
+		return (write(1, "(nill)", 5));
+	char buffer[1024];
 	int i, length;
 
 	sprintf(buffer, "%p", ptr);
