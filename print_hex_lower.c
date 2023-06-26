@@ -16,7 +16,8 @@ int print_hexadecimal_lower(va_list ar)
 	sprintf(buffer, "%x", num);
 	length = _strlen(buffer);
 
-	for (int i = 0; i < length; i++)
+	int i;
+	for (i = 0; i < length; i++)
 		_putchar(buffer[i]);
-	return (length);
+	return length;
 }

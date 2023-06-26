@@ -15,8 +15,9 @@ int print_pointer(va_list ar)
 	sprintf(buffer, "%p", ptr);
 	length = _strlen(buffer);
 
-	for (int i = 0; i < length; i++)
+	int i;
+	for (i = 0; i < length; i++)
 		_putchar(buffer[i]);
 
-	return (length);
+	return length;
 }

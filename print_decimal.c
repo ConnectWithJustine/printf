@@ -6,19 +6,19 @@
  *
  * Return: The number of characters printed.
  */
-int
-print_decimal(va_list ar)
+int print_decimal(va_list ar)
 {
-	int num = va_arg(ar, int);
-	char buffer[20];
-	int length;
+    int num = va_arg(ar, int);
+    char buffer[20];
+    int length;
 
-	sprintf(buffer, "%d", num);
-	length = _strlen(buffer);
+    sprintf(buffer, "%d", num);
+    length = _strlen(buffer);
 
-	for (int i = 0; i < length; i++)
-	{
-		_putchar(buffer[i]);
-	}
-	return (length);
+    int i;
+    for (i = 0; i < length; i++)
+    {
+        _putchar(buffer[i]);
+    }
+    return length;
 }

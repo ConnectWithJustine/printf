@@ -15,8 +15,9 @@ int print_octal(va_list ar)
 	sprintf(buffer, "%o", num);
 	length = _strlen(buffer);
 
-	for (int i = 0; i < length; i++)
+	int i;
+	for (i = 0; i < length; i++)
 		_putchar(buffer[i]);
 
-	return (length);
+	return length;
 }

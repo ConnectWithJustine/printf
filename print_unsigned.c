@@ -8,15 +8,15 @@
  */
 int print_unsigned(va_list ar)
 {
-	unsigned int num = va_arg(ar, unsigned int);
-	char buffer[20];
-	int length;
+    unsigned int num = va_arg(ar, unsigned int);
+    char buffer[20];
+    int length;
 
-	sprintf(buffer, "%u", num);
-	length = _strlen(buffer);
+    sprintf(buffer, "%u", num);
+    length = _strlen(buffer);
 
-	for (int i = 0; i < length; i++)
-		_putchar(buffer[i]);
+    for (int i = 0; i < length; i++)
+        _putchar(buffer[i]);
 
-	return (length);
+    return length;
 }
