@@ -11,6 +11,13 @@
 int _printf(const char *format, ...);
 int format_handler(char specifier, va_list args);
 
+/* flags */
+#define _MINUS 1
+#define _PLUS 2
+#define _ZERO 4
+#define _HASH 8
+#define _SPACE 16
+
 /* Custom conversion specifiers */
 int print_percent(__attribute__((unused)) va_list ar);
 int print_hexadecimal_upper(va_list ar);
@@ -25,6 +32,7 @@ int print_char(va_list ar);
 int print_rot13(va_list ar);
 
 /* others */
+int write_unsgnd(char buffer[], int length, int flags, int width);
 char *_strcpy(char *dest, char *src);
 int print_reverse(va_list ar);
 int _strlen(char *str);
