@@ -20,7 +20,7 @@ int _putchar(char c);
 
 int _printf(const char *format, ...);
 int format_handler(const char *fmt, int *i,
-		va_list list, char buffer[], int flags, int width, int precision, int size);
+		va_list list, char buffer[], int flags, int wth, int precision, int sz);
 
 /* Funtions to print chars and strings */
 int print_char(va_list types, char buffer[],
