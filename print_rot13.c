@@ -1,6 +1,4 @@
 #include "main.h"
-
-/******* PRINT A STRING IN ROT13 ***********/
 /**
  * print_rot13string - Print a string in rot13.
  * @types: Lista of arguments

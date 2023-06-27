@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 /**
  * print_percent - Prints a percent sign
  * @types: Lista of arguments
@@ -17,6 +17,6 @@ int print_percent(va_list types, char buffer[],
 	(void)flags;
 	(void)width;
 	(void)precision;
-	(void)size; 
+	(void)size;
 	return (write(1, "%%", 1));
 }

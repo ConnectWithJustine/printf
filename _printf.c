@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 	int i, flags, width, precision, size, buff_in, printed, printed_chars;
 	va_list list;
 	char buffer[BUFF_SIZE];
+
 	buff_in = printed = printed_chars = 0;
 
 	if (!format)
@@ -46,6 +47,5 @@ int _printf(const char *format, ...)
 	print_buffer(buffer, &buff_in);
 
 	va_end(list);
-
 	return (printed_chars);
 }

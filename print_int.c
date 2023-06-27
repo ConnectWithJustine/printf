@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 
 /**
  * print_int - Print int
@@ -38,6 +38,5 @@ int print_int(va_list types, char buffer[],
 	}
 
 	i++;
-
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }

@@ -1,6 +1,4 @@
 #include "main.h"
-
-/*********** PRINT REVERSE ******/
 /**
  * print_reverse - Prints reverse string.
  * @types: Lista of arguments
@@ -29,7 +27,7 @@ int print_reverse(va_list types, char buffer[],
 	{
 		(void)precision;
 
-		str = ")Null(";
+		str = "()Null(";
 	}
 	for (i = 0; str[i]; i++)
 		;
