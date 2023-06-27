@@ -1,34 +1,55 @@
-#include "main.h"
-
+#include "main.h" 
 /**
- * print_string - Prints a string of characters.
- * @ar: A va_list containing the string to be printed.
- *
- * Return: The number of characters printed.
+ * print_string - Prints a string of character
+ * @types: List a of arguments
+ * @buffer: Buffer array to handle print
+ * @flags: Calculates active flags
+ * @width: width.
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed
  */
-int print_string(va_list ar)
+int print_string(va_list types, char buffer[],
+				 int flags, int width, int precision, int size)
 {
-	char *str = va_arg(ar, char *);
-	int count = 0;
+	int length = 0, i;
+	char *str = va_arg(types, char *);
 
-	if (str == NULL)
-		str = "(null)";
-
-	for (; *str != '\0'; str++)
+	(void)buffer;
+	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size;
+	if (!str)
 	{
-		if ((*str >= 0 && *str < 32) || *str >= 127)
+		str = "(null)";
+		if (precision >= 6)
+			str = "      ";
+	}
+
+	while (str[length] != '\0')
+		length++;
+
+	if (precision >= 0 && precision < length)
+		length = precision;
+
+	if (width > length)
+	{
+		if (flags & MINUS)
 		{
-			_putchar('\\');
-			_putchar('x');
-			count += 2;
-			count += print_hex(*str);
+			write(1, &str[0], length);
+			for (i = width - length; i > 0; i--)
+				write(1, " ", 1);
+			return (width);
 		}
 		else
 		{
-			_putchar(*str);
-			count++;
+			for (i = width - length; i > 0; i--)
+				write(1, " ", 1);
+			write(1, &str[0], length);
+			return (width);
 		}
 	}
 
-	return (count);
+	return (write(1, str, length));
 }

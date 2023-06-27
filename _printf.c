@@ -8,36 +8,44 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int count = 0;
-	char current_char;
+	int i, flags, width, precision, size, buff_in, printed, printed_chars;
+	va_list list;
+	char buffer[BUFF_SIZE];
+	buff_in = printed = printed_chars = 0;
 
-	va_start(args, format);
+	if (!format)
+		return (-1);
 
-	while ((current_char = *format++) != '\0')
+	va_start(list, format);
+
+	for (i = 0; format && format[i] != '\0'; i++)
 	{
-		if (current_char == '%')
+		if (format[i] != '%')
 		{
-			if (*format == '%')
-			{
-				_putchar('%');
-				count++;
-				format++;
-			}
-			else if (*format)
-			{
-				count += format_handler(*format++, args);
-			}
+			buffer[buff_in++] = format[i];
+			if (buff_in == BUFF_SIZE)
+				print_buffer(buffer, &buff_in);
+			printed_chars++;
 		}
 		else
 		{
-			_putchar(current_char);
-			count++;
+			print_buffer(buffer, &buff_in);
+			flags = get_flags(format, &i);
+			width = get_width(format, &i, list);
+			precision = get_precision(format, &i, list);
+			size = get_size(format, &i);
+			++i;
+			printed = format_handler(format, &i, list, buffer,
+								   flags, width, precision, size);
+			if (printed == -1)
+				return (-1);
+			printed_chars += printed;
 		}
 	}
 
-	va_end(args);
+	print_buffer(buffer, &buff_in);
 
-	return (count);
+	va_end(list);
+
+	return (printed_chars);
 }
-

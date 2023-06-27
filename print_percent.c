@@ -1,13 +1,22 @@
-#include "main.h"
-
+#include "main.h" 
 /**
- * print_percent - Prints a percent character.
- * @ar: Unused.
- *
- * Return: Always returns 1 (number of characters printed).
+ * print_percent - Prints a percent sign
+ * @types: Lista of arguments
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates active flags
+ * @width: get width.
+ * @precision: Precision specification
+ * @size: Size specifier
+ * Return: Number of chars printed
  */
-int print_percent(__attribute__((unused)) va_list ar)
+int print_percent(va_list types, char buffer[],
+				  int flags, int width, int precision, int size)
 {
-	_putchar('%');
-	return (1);
+	(void)types;
+	(void)buffer;
+	(void)flags;
+	(void)width;
+	(void)precision;
+	(void)size; 
+	return (write(1, "%%", 1));
 }
