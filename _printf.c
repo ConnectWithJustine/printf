@@ -2,9 +2,8 @@
 
 /**
  * _printf - Custom printf function.
- * @format: A character string containing zero or more directives.
- *
- * Return: The number of characters printed.
+ * @format: format.
+ * Return: Printed chars.
  */
 int _printf(const char *format, ...)
 {
@@ -47,5 +46,6 @@ int _printf(const char *format, ...)
 
 	va_end(list);
 
+	return (printed_chars);
 	return (printed_chars);
 }
