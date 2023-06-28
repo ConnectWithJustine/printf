@@ -25,7 +25,7 @@ int format_handler(const char *fmt, int *ind, va_list list, char buffer[],
 		case 'i':
 		case 'd': return (print_int(list, buffer, flags, wth, precision, sz));
 		case 'b': return (print_binary(list, buffer, flags, wth, precision, sz));
-		case 'u': return (print_unsigned(list, buffer, flags, wth, precision, sz));
+		case 'u': return (print_unsigned_int(list, buffer, flags, wth, precision, sz));
 		case 'o': return (print_octal(list, buffer, flags, wth, precision, sz));
 		case 'x':
 	return (print_hexadecimal(list, buffer, flags, wth, precision, sz));
